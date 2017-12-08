@@ -1,0 +1,7 @@
+com\hinet\storage\controller\RegencyController.class
+com\hinet\storage\dao\RegencyDAO.class
+com\hinet\storage\dao\RegencyDAOImpl.class
+com\hinet\storage\controller\HomeController.class
+com\hinet\storage\dao\BaseDAO.class
+com\hinet\storage\model\Regency.class
+com\hinet\storage\dao\BaseDAOImpl.class
