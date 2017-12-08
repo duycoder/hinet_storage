@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+<tiles-definitions>
+    <definition name="base.definition" template="/WEB-INF/pages/layout/layout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="navbar" value="/WEB-INF/pages/layout/navbar.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="menu-setting" value="/WEB-INF/pages/layout/menu-setting.jsp"/>
+        <put-attribute name="page-breadcumb" value="/WEB-INF/pages/layout/page-breadcumb.jsp"/>
+        <put-attribute name="page-header" value="/WEB-INF/pages/layout/page-header.jsp"/>
+        <put-attribute name="sidebar" value="/WEB-INF/pages/layout/sidebar.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp"/>
+    </definition>
+    
+    
+    <definition name="index" extends="base.definition">  
+        <put-attribute name="title" value="Trang chủ" />  
+        <put-attribute name="body" value="/WEB-INF/pages/index/index.jsp" />  
+    </definition>
+    
+    <definition name="regency" extends="base.definition">  
+        <put-attribute name="title" value="Quản lý chức vụ" />  
+        <put-attribute name="body" value="/WEB-INF/pages/regency/regencyManager.jsp" />  
+    </definition>
+</tiles-definitions>
