@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\BaseDAOImpl.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\BaseDAO.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\RegencyController.java
@@ -5,3 +6,12 @@ C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\sr
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\RegencyDAO.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\model\Regency.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\RegencyDAOImpl.java
+=======
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\model\Regency.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\RegencyController.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\BaseDAO.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\BaseDAOImpl.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\RegencyDAOImpl.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\RegencyDAO.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\trunk\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\HomeController.java
+>>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7

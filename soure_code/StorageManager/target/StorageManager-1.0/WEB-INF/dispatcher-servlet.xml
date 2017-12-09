@@ -35,17 +35,27 @@
           p:definitions="/WEB-INF/tiles/tiles.xml"/>
     
     <bean id="propertyConfigurer"
+<<<<<<< HEAD
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="/WEB-INF/database.properties" />
+=======
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="location" value="/WEB-INF/database.properties" />
+>>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7
     </bean>
     
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}" />
+<<<<<<< HEAD
         <property name="url" value="jdbc:mysql://localhost:3306/hinet_storage?UseUnicode=true&amp;characterEncoding=utf8" />
+=======
+        <property name="url" value="jdbc:mysql://localhost:3306/hinet_storage" />
+>>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
     </bean>
     
+<<<<<<< HEAD
     <!--JPA-->
     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
         <property name="dataSource" ref="dataSource" />
@@ -58,6 +68,8 @@
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
     
+=======
+>>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan" value="com.hinet.storage" />
@@ -71,9 +83,12 @@
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.use_sql_comments">true</prop>
                 <prop key="hibernate.generate_statistics">true</prop>
+<<<<<<< HEAD
                 <prop key="hibernate.connection.CharSet">utf8</prop>
                 <prop key="hibernate.connection.characterEncoding">utf8</prop>
                 <prop key="hibernate.connection.useUnicode">true</prop>
+=======
+>>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7
             </props>
         </property>
     </bean>

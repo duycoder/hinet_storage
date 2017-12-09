@@ -3,6 +3,7 @@
     Created on : Dec 8, 2017, 11:24:02 AM
     Author     : hi
 --%>
+<<<<<<< HEAD
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -259,3 +260,7 @@
         });
     }
 </script>
+=======
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+>>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7
