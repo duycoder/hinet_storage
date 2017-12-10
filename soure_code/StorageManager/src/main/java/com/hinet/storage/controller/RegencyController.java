@@ -40,7 +40,7 @@ public class RegencyController {
     public String rengencyManager(ModelMap model) {
         List<Regency> regencies = regencyDAO.getRegencies();
         model.addAttribute("regencies", regencies);
-        return "regency";
+        return "regencyManager";
     }
 
     /**

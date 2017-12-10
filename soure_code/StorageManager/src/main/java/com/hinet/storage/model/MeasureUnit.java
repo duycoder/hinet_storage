@@ -50,7 +50,10 @@ public class MeasureUnit {
 
     @Column(name = "user_modify", nullable = true)
     private Integer userModify;
-
+    
+    @Column(name = "is_delete")
+    private Boolean isDelete;
+    
     public int getId() {
         return id;
     }
@@ -123,4 +126,11 @@ public class MeasureUnit {
         this.unitTypeId = unitTypeId;
     }
 
+    public Boolean getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Boolean isDelete) {
+        this.isDelete = isDelete;
+    }
 }

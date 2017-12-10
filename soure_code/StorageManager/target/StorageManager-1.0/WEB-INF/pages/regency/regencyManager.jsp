@@ -3,13 +3,11 @@
     Created on : Dec 8, 2017, 11:24:02 AM
     Author     : hi
 --%>
-<<<<<<< HEAD
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
 <div class="col-xs-12">
-
     <div class="row">
         <div class="col-sm-12">
             <button class="btn btn-primary" id="btnAdd">
@@ -216,7 +214,7 @@
 
     function openDeleteRegencyModal(id) {
         bootbox.confirm({
-            message: "Bạn có chắc xóa người dùng này?",
+            message: "Bạn có chắc xóa chức năng này?",
             buttons: {
                 confirm: {
                     label: 'Có',
@@ -260,7 +258,4 @@
         });
     }
 </script>
-=======
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
->>>>>>> 8c3d0b2c56d13af267f9255840aed4b8667fc2e7

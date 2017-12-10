@@ -20,8 +20,28 @@
         <put-attribute name="body" value="/WEB-INF/pages/index/index.jsp" />  
     </definition>
     
-    <definition name="regency" extends="base.definition">  
+    <definition name="regencyManager" extends="base.definition">  
         <put-attribute name="title" value="Quản lý chức vụ" />  
         <put-attribute name="body" value="/WEB-INF/pages/regency/regencyManager.jsp" />  
+    </definition>
+    
+    <definition name="functionManager" extends="base.definition">  
+        <put-attribute name="title" value="Quản lý chức năng" />  
+        <put-attribute name="body" value="/WEB-INF/pages/function/functionManager.jsp" />  
+    </definition>
+    
+    <definition name="actionManager" extends="base.definition">  
+        <put-attribute name="title" value="Quản lý hành động" />  
+        <put-attribute name="body" value="/WEB-INF/pages/action/actionManager.jsp" />  
+    </definition>
+    
+    <definition name="measureUnitManager" extends="base.definition">  
+        <put-attribute name="title" value="Quản lý đơn vị đo lường" />  
+        <put-attribute name="body" value="/WEB-INF/pages/measureUnit/measureUnitManager.jsp" />  
+    </definition>
+    
+    <definition name="storage" extends="base.definition">  
+        <put-attribute name="title" value="Quản lý kho" />  
+        <put-attribute name="body" value="/WEB-INF/pages/storage/storageManager.jsp" />  
     </definition>
 </tiles-definitions>

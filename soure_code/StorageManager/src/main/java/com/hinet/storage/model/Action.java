@@ -22,7 +22,7 @@ import javax.persistence.Table;
 public class Action {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     

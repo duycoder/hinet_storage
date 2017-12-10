@@ -8,7 +8,6 @@
 
 
 <div class="col-xs-12">
-
     <div class="row">
         <div class="col-sm-12">
             <button class="btn btn-primary" id="btnAdd">
@@ -215,7 +214,7 @@
 
     function openDeleteRegencyModal(id) {
         bootbox.confirm({
-            message: "Bạn có chắc xóa người dùng này?",
+            message: "Bạn có chắc xóa chức năng này?",
             buttons: {
                 confirm: {
                     label: 'Có',

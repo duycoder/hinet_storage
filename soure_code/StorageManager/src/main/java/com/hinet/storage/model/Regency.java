@@ -23,11 +23,11 @@ import javax.persistence.Table;
 public class Regency {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "regency_code", length = 4000)
+    @Column(name = "regency_code", length = 255)
     private String regencyCode;
 
     @Column(name = "regency_name", length = 50)
@@ -39,10 +39,10 @@ public class Regency {
     @Column(name = "date_modify")
     private Date dateModify;
 
-    @Column(name = "user_create", nullable = true)
+    @Column(name = "user_create")
     private Integer userCreate;
 
-    @Column(name = "user_modify", nullable = true)
+    @Column(name = "user_modify")
     private Integer userModify;
 
     @Column(name = "is_delete")

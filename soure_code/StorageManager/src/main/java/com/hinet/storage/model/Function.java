@@ -22,9 +22,9 @@ import javax.persistence.Table;
 public class Function {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @Column(name = "function_code", length = 50)
     private String functionCode;
@@ -50,11 +50,11 @@ public class Function {
     @Column(name = "is_delete")
     private Boolean isDelete;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

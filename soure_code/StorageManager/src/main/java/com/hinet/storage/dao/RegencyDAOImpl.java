@@ -27,7 +27,7 @@ public class RegencyDAOImpl extends BaseDAOImpl implements RegencyDAO {
     @Override
     public List<Regency> getRegencies() {
         Session session = this.openSession();
-        String sql = "from Regency as re where re.isDelete != true";
+        String sql = "from Regency as re where re.isDelete != true order by re.id desc";
         Query query = session.createQuery(sql, Regency.class);
         List<Regency> regencies = query.list();
         session.close();
@@ -35,6 +35,7 @@ public class RegencyDAOImpl extends BaseDAOImpl implements RegencyDAO {
     }
 
     @Override
+    @Transactional
     public boolean addRegency(Regency regency) {
         try {
             Session session = this.getCurrentSession();
@@ -42,8 +43,8 @@ public class RegencyDAOImpl extends BaseDAOImpl implements RegencyDAO {
             regency.setIsDelete(false);
             regency.setDateCreate(new Date());
             regency.setDateModify(new Date());
-            regency.setUserCreate(Integer.MIN_VALUE);
-            regency.setUserModify(Integer.MIN_VALUE);
+            regency.setUserCreate(1);
+            regency.setUserModify(1);
             session.persist(regency);
             transaction.commit();
             return true;
@@ -55,7 +56,7 @@ public class RegencyDAOImpl extends BaseDAOImpl implements RegencyDAO {
     @Override
     public Regency getRegencyById(int id) {
         Session session = this.openSession();
-        String sql = "from Regency as re where re.isDelete != true and re.id = :id";
+        String sql = "from Regency as re where re.is_delete != true and re.id = :id";
         Query query = session.createQuery(sql);
         query.setParameter("id", id);
         Regency regency = (Regency) query.uniqueResult();
@@ -68,8 +69,8 @@ public class RegencyDAOImpl extends BaseDAOImpl implements RegencyDAO {
         try {
             EntityManager em = this.getEntityManager();
             em.getTransaction().begin();
-            String sql = "update Regency re set re.RegencyCode = :regencyCode,"
-                    + "re.RegencyName =:regencyName where re.id = :id";
+            String sql = "update Regency re set re.regency_code = :regencyCode,"
+                    + "re.regency_name =:regencyName where re.ID = :id";
             javax.persistence.Query query = em.createNativeQuery(sql)
                     .setParameter("regencyCode", regency.getRegencyCode())
                     .setParameter("regencyName", regency.getRegencyName())
