@@ -39,32 +39,39 @@ public class MeasureUnitController {
         model.addAttribute("unitTypes", UnitTypeConstant.getUnitTypes());
         return "measureUnitManager";
     }
-    
+
     @ResponseBody
     @RequestMapping(value = "/addMeasureUnit.json", method = RequestMethod.POST)
-    public boolean addMeasureUnit(@RequestBody MeasureUnit unit){
+    public boolean addMeasureUnit(@RequestBody MeasureUnit unit) {
         boolean result = measureUnitDAO.addMeasureUnit(unit);
         return result;
     }
-    
+
     @ResponseBody
     @RequestMapping(value = "/updateMeasureUnit.json", method = RequestMethod.POST)
-    public boolean updateMeasureUnit(@RequestBody MeasureUnit unit){
+    public boolean updateMeasureUnit(@RequestBody MeasureUnit unit) {
         boolean result = measureUnitDAO.updateMeasureUnit(unit);
         return result;
     }
-    
+
     @ResponseBody
     @RequestMapping(value = "/getMeasureUnit.json/{id}", method = RequestMethod.GET)
-    public MeasureUnit getMeasureUnitById(@PathVariable("id") int id){
+    public MeasureUnit getMeasureUnitById(@PathVariable("id") int id) {
         MeasureUnit unit = measureUnitDAO.getMeasureUnitById(id);
         return unit;
     }
-    
+
     @ResponseBody
     @RequestMapping(value = "/deleteMeasureUnit.json", method = RequestMethod.POST)
-    public boolean deleteMeasureUnit(@RequestParam("id") int id){
+    public boolean deleteMeasureUnit(@RequestParam("id") int id) {
         boolean result = measureUnitDAO.deleteMeasureUnit(id);
+        return result;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getJsonMeasureUnits.json", method = RequestMethod.GET)
+    public List<MeasureUnit> getJsonMeasureUnits() {
+        List<MeasureUnit> result = measureUnitDAO.getMeasureUnits();
         return result;
     }
 }

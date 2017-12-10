@@ -44,4 +44,9 @@
         <put-attribute name="title" value="Quản lý kho" />  
         <put-attribute name="body" value="/WEB-INF/pages/storage/storageManager.jsp" />  
     </definition>
+    
+    <definition name="productCategoryManager" extends="base.definition">
+        <put-attribute name="title" value="Quản lý nhóm hàng"/>
+        <put-attribute name="body" value="/WEB-INF/pages/productCategory/productCategoryManager.jsp"/>
+    </definition>
 </tiles-definitions>

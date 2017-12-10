@@ -9,10 +9,12 @@ C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\sr
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\FunctionDAO.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\ActionController.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\MeasureUnitDAO.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\ProductCategoryController.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\model\UsersRegency.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\MeasureUnitDAOImpl.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\ActionDAOImpl.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\RegencyController.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\ProductCategoryDAOImpl.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\model\ImportBillDetail.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\FunctionController.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\model\ImportBill.java
@@ -26,6 +28,7 @@ C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\sr
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\bo\ActionBO.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\controller\HomeController.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\RegencyDAO.java
+C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\viewmodel\EditProductCategoryViewModel.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\dao\FunctionDAOImpl.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\model\RegencyAction.java
 C:\Users\hi\Desktop\Qu?n lý kho hinet\hinet_storage\soure_code\StorageManager\src\main\java\com\hinet\storage\model\ExportBillDetail.java

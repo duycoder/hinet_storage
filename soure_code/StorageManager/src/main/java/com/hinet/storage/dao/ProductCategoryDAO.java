@@ -21,7 +21,7 @@ public interface ProductCategoryDAO {
 
     boolean updateProductCategory(ProductCategory action);
 
-    boolean deleteProductCategory(long id);
+    boolean deleteProductCategory(int id);
 
-    ProductCategory getProductCategoryById(long id);
+    ProductCategory getProductCategoryById(int id);
 }
