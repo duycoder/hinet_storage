@@ -2,12 +2,15 @@ com\hinet\storage\model\ProductCategory.class
 com\hinet\storage\model\RegencyFunction.class
 com\hinet\storage\viewmodel\EditMeasureUnitViewModel.class
 com\hinet\storage\dao\RegencyDAO.class
+com\hinet\storage\controller\ProductController.class
 com\hinet\storage\controller\HomeController.class
+com\hinet\storage\controller\StorageController.class
 com\hinet\storage\dao\BaseDAO.class
 com\hinet\storage\dao\FunctionDAO.class
 com\hinet\storage\dao\ProductCategoryDAO.class
 com\hinet\storage\model\Storage.class
 com\hinet\storage\viewmodel\EditActionViewModel.class
+com\hinet\storage\dao\ProductDAOImpl.class
 com\hinet\storage\model\Product.class
 com\hinet\storage\model\Regency.class
 com\hinet\storage\model\Users.class
@@ -16,6 +19,7 @@ com\hinet\storage\model\ExportBill.class
 com\hinet\storage\dao\MeasureUnitDAOImpl.class
 com\hinet\storage\dao\StorageDAO.class
 com\hinet\storage\model\ImportBillDetail.class
+com\hinet\storage\viewmodel\EditProductCategoryViewModel.class
 com\hinet\storage\model\ProductStorage.class
 com\hinet\storage\dao\MeasureUnitDAO.class
 com\hinet\storage\model\ImportBill.class
@@ -34,7 +38,10 @@ com\hinet\storage\dao\BaseDAOImpl.class
 com\hinet\storage\controller\ActionController.class
 com\hinet\storage\model\RegencyAction.class
 com\hinet\storage\dao\FunctionDAOImpl.class
+com\hinet\storage\dao\ProductDAO.class
 com\hinet\storage\model\UsersRegency.class
 com\hinet\storage\controller\MeasureUnitController.class
 com\hinet\storage\controller\FunctionController.class
+com\hinet\storage\controller\ProductCategoryController.class
 com\hinet\storage\dao\ActionDAOImpl.class
+com\hinet\storage\dao\ProductCategoryDAOImpl.class

@@ -10,7 +10,8 @@ import java.util.Map;
 
 /**
  *
- * @author hi
+ * @author duynn
+ * @create date: 9/12/2017
  */
 public class UnitTypeConstant {
 

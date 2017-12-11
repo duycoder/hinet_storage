@@ -40,7 +40,7 @@
         <put-attribute name="body" value="/WEB-INF/pages/measureUnit/measureUnitManager.jsp" />  
     </definition>
     
-    <definition name="storage" extends="base.definition">  
+    <definition name="storageManager" extends="base.definition">  
         <put-attribute name="title" value="Quản lý kho hàng" />  
         <put-attribute name="body" value="/WEB-INF/pages/storage/storageManager.jsp" />  
     </definition>
@@ -48,5 +48,15 @@
     <definition name="productCategoryManager" extends="base.definition">
         <put-attribute name="title" value="Quản lý nhóm hàng"/>
         <put-attribute name="body" value="/WEB-INF/pages/productCategory/productCategoryManager.jsp"/>
+    </definition>
+    
+    <definition name="productManager" extends="base.definition">
+        <put-attribute name="title" value="Quản lý mặt hàng"/>
+        <put-attribute name="body" value="/WEB-INF/pages/product/productManager.jsp"/>
+    </definition>
+    
+    <definition name="editProduct" extends="base.definition">
+        <put-attribute name="title" value="Cập nhật mặt hàng"/>
+        <put-attribute name="body" value="/WEB-INF/pages/product/editProduct.jsp"/>
     </definition>
 </tiles-definitions>

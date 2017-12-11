@@ -30,7 +30,7 @@ public class Storage {
     @Column(name = "storage_code")
     private String storageCode;
 
-    @Column(name = "storageName ")
+    @Column(name = "storage_name ")
     private String storageName;
 
     @Column(name = "storage_address")
