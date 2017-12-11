@@ -41,7 +41,7 @@
     </definition>
     
     <definition name="storage" extends="base.definition">  
-        <put-attribute name="title" value="Quản lý kho" />  
+        <put-attribute name="title" value="Quản lý kho hàng" />  
         <put-attribute name="body" value="/WEB-INF/pages/storage/storageManager.jsp" />  
     </definition>
     
