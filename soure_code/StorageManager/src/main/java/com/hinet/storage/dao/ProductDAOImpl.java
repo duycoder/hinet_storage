@@ -5,6 +5,7 @@
  */
 package com.hinet.storage.dao;
 
+import com.google.common.base.Strings;
 import com.hinet.storage.model.Product;
 import java.util.Date;
 import java.util.List;
@@ -36,35 +37,16 @@ public class ProductDAOImpl extends BaseDAOImpl implements ProductDAO {
     @Override
     @Transactional
     public boolean addProduct(Product product) {
-        try {
-            Session session = this.openSession();
-            product.setDateCreate(new Date());
-            product.setDateModify(new Date());
-            product.setUserCreate(Integer.MAX_VALUE);
-            product.setUserModify(Integer.MAX_VALUE);
-            product.setIsDelete(false);
-            session.save(product);
-            session.close();
-            return true;
-        } catch (GenericJDBCException ex) {
-            System.out.println(ex.getCause().toString().toUpperCase());
-            return false;
-        }
+        return this.insertEntity(product);
     }
 
     @Override
+    @Transactional
     public boolean updateProduct(Product product) {
-        Session session = this.getCurrentSession();
-        Transaction transaction = session.beginTransaction();
-        try {
-            session.merge(product);
-            transaction.commit();
-            return true;
-        } catch (Exception ex) {
-            transaction.rollback();
-            System.out.println(ex.getCause().toString().toUpperCase());
-            return false;
-        }
+        Product oldProduct = this.getById(Product.class, product.getId());
+        product.setIsDelete(oldProduct.getIsDelete());
+        product.setUserCreate(oldProduct.getUserCreate());
+        return this.updateEntity(product);
     }
 
     @Override
@@ -75,8 +57,9 @@ public class ProductDAOImpl extends BaseDAOImpl implements ProductDAO {
             String sql = "update Product as p set p.isDelete = true where p.id = :id";
             Query query = session.createQuery(sql);
             query.setParameter("id", id);
+            boolean result = query.executeUpdate() > 0;
             transaction.commit();
-            return true;
+            return result;
         } catch (Exception ex) {
             transaction.rollback();
             System.out.println(ex.getCause().toString().toUpperCase());
@@ -86,8 +69,42 @@ public class ProductDAOImpl extends BaseDAOImpl implements ProductDAO {
 
     @Override
     public Product getProductById(long id) {
+        return this.getById(Product.class, id);
+    }
+
+    @Override
+    public Product getProductByProductCode(long id, String productCode) {
         Session session = this.openSession();
-        Product product = session.find(Product.class, id);
+        String sql = "from Product as p where p.productCode = :product_code";
+        if (id > 0) {
+            sql += " and p.id != :id";
+        }
+        Query query = session.createQuery(sql, Product.class);
+        query.setParameter("product_code", productCode);
+        if (id > 0) {
+            query.setParameter("id", id);
+        }
+        query.setMaxResults(1);
+        Product product = (Product) query.uniqueResult();
+        session.close();
+        return product;
+    }
+
+    @Override
+    public Product getProductByOfficialName(long id, String officialName) {
+        Session session = this.openSession();
+        String sql = "from Product as p where p.officialName = :official_name";
+        if (id > 0) {
+            sql += " and p.id != :id";
+        }
+        Query query = session.createQuery(sql, Product.class);
+        query.setParameter("official_name", officialName);
+        if (id > 0) {
+            query.setParameter("id", id);
+        }
+        query.setMaxResults(1);
+        Product product = (Product) query.uniqueResult();
+        session.close();
         return product;
     }
 }

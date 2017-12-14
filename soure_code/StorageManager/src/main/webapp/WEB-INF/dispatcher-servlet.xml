@@ -30,6 +30,9 @@
           class="org.springframework.web.servlet.view.UrlBasedViewResolver" 
           p:viewClass=" org.springframework.web.servlet.view.tiles3.TilesView"/>
     
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    
     <bean id="tilesConfigurer" 
           class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"
           p:definitions="/WEB-INF/tiles/tiles.xml"/>
@@ -76,5 +79,14 @@
                 <prop key="hibernate.connection.useUnicode">true</prop>
             </props>
         </property>
+    </bean>
+    
+    <!--VALIDATORS-->
+    <bean id="productFormValidator" class="com.hinet.storage.validator.ProductFormValidator"/>
+    
+    <!--VALIDATOR MESSAGE SOURCES-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+            <property name="basename" value="WEB-INF/validation" />
+        <property name="defaultEncoding" value="UTF-8" />
     </bean>
 </beans>

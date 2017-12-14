@@ -25,12 +25,7 @@ public class MeasureUnitDAOImpl extends BaseDAOImpl implements MeasureUnitDAO {
 
     @Override
     public List<MeasureUnit> getMeasureUnits() {
-        Session session = this.openSession();
-        String sql = "from MeasureUnit as m where m.isDelete != true";
-        Query query = session.createQuery(sql, MeasureUnit.class);
-        List<MeasureUnit> measureUnits = query.list();
-        session.close();
-        return measureUnits;
+       return this.getEntities(MeasureUnit.class);
     }
 
     @Override

@@ -26,13 +26,7 @@ public class ProductCategoryDAOImpl extends BaseDAOImpl implements ProductCatego
 
     @Override
     public List<ProductCategory> getProductCategories() {
-        List<ProductCategory> categories = new ArrayList<ProductCategory>();
-        try (Session session = this.openSession()) {
-            String sql = "from ProductCategory p where p.isDelete != true order by p.id desc";
-            Query query = session.createQuery(sql, ProductCategory.class);
-            categories = query.list();
-        }
-        return categories;
+        return this.getEntities(ProductCategory.class);
     }
 
     @Override

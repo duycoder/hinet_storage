@@ -24,4 +24,8 @@ public interface ProductDAO {
     boolean deleteProduct(long id);
 
     Product getProductById(long id);
+    
+    Product getProductByProductCode(long id, String productCode);
+    
+    Product getProductByOfficialName(long id, String officialName);
 }

@@ -10,9 +10,11 @@ import java.util.List;
 
 /**
  *
- * @author hi
+ * @author duynn
+ * @create_date: 12/12/2017
  */
 public interface MeasureUnitDAO {
+
     List<MeasureUnit> getMeasureUnits();
 
     boolean addMeasureUnit(MeasureUnit measureUnit);

@@ -30,43 +30,43 @@ public class Product {
 
     @Column(name = "product_code", length = 50)
     private String productCode;
-    
+
     @Column(name = "official_name", length = 150)
     private String officialName;
-    
+
     @Column(name = "other_name", length = 150)
     private String otherName;
-    
+
     @Column(name = "calculate_method_id")
     private Integer calculateMethodId;
-    
+
     @Column(name = "measure_unit_id")
     private Integer measureUnitId;
-    
+
     @Column(name = "product_category_id")
     private Integer productCategoryId;
-    
+
     @Column(name = "vat_tax_id")
     private Integer vatTaxId;
-    
+
     @Column(name = "tariff_tax_id")
     private Integer tariffTaxId;
-    
+
     @Column(name = "origin", length = 500)
     private String origin;
-    
+
     @Column(name = "manufacturer", length = 200)
     private String manufacturer;
-    
+
     @Column(name = "price", length = 18)
     private BigDecimal price;
-    
+
     @Column(name = "safe_inventory_quantity")
     private Long safeInventoryQuantity;
-    
+
     @Column(name = "status")
     private Integer status;
-    
+
     @Column(name = "date_create")
     private Date dateCreate;
 

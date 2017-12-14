@@ -5,17 +5,26 @@
  */
 package com.hinet.storage.dao;
 
+import com.google.common.base.Strings;
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.exception.GenericJDBCException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -133,5 +142,125 @@ public class BaseDAOImpl implements BaseDAO {
         }
         count = (Long) q.uniqueResult();
         return count;
+    }
+
+    @Override
+    @Transactional
+    public <T> boolean insertEntity(T entity) {
+        Session session = this.openSession();
+        boolean result = true;
+        try {
+            Class<?> entityClass = entity.getClass();
+            Field dateCreateField = entityClass.getDeclaredField("dateCreate");
+            Field dateModifyField = entityClass.getDeclaredField("dateModify");
+            Field isDeleteField = entityClass.getDeclaredField("isDelete");
+
+            if (dateCreateField != null) {
+                dateCreateField.setAccessible(true);
+                dateCreateField.set(entity, new Date());
+            }
+            if (dateModifyField != null) {
+                dateModifyField.setAccessible(true);
+                dateModifyField.set(entity, new Date());
+            }
+            if (isDeleteField != null) {
+                isDeleteField.setAccessible(true);
+                isDeleteField.set(entity, false);
+            }
+            session.save(entity);
+            session.close();
+        } catch (NoSuchFieldException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (GenericJDBCException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            result = false;
+        }
+        return result;
+    }
+
+    @Override
+    @Transactional
+    public <T> boolean updateEntity(T entity){
+        Session session = this.openSession();
+        Transaction transaction = session.beginTransaction();
+        boolean result = true;
+        try {
+            Class<?> entityClass = entity.getClass();
+            Field dateModifyField = entityClass.getDeclaredField("dateModify");
+
+            if (dateModifyField != null) {
+                dateModifyField.setAccessible(true);
+                dateModifyField.set(entity, new Date());
+            }
+            session.update(entity);
+            transaction.commit();
+            session.close();
+        } catch (NoSuchFieldException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (GenericJDBCException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            result = false;
+        }
+        return result;
+    }
+    
+    @Override
+    public <T> List<T> getEntities(Class<T> entityClass) {
+        Session session = this.openSession();
+        String sql = "from " + entityClass.getName() + " as e";
+        try {
+            if (entityClass.getDeclaredField("isDelete") != null) {
+                sql += " where e.isDelete != true ";
+            }
+        } catch (NoSuchFieldException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(BaseDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        sql += " order by e.id desc";
+
+        org.hibernate.query.Query query = session.createQuery(sql);
+        List<T> result = query.list();
+        session.close();
+        return result;
+    }
+
+    @Override
+    public <T> String generateEntityCode(Class<T> entityClass, String prefix) {
+        String code = "";
+        if (Strings.isNullOrEmpty(prefix) == false) {
+            Session session = this.openSession();
+            org.hibernate.query.Query query = session.createQuery("from " + entityClass.getName() + " as e order by e.id desc", entityClass);
+            query.setMaxResults(1);
+            T entity = (T) query.uniqueResult();
+            long serialNumber = 1;
+            if (entity != null) {
+                Serializable id = session.getIdentifier(entity);
+                serialNumber += (long)id;
+            }
+            code = prefix.toUpperCase() + "-" + String.format("%010d", serialNumber);
+            session.close();
+        }
+        return code;
+    }
+
+    @Override
+    public <T> T getById(Class<T> entityClass, Serializable id) {
+        Session session = this.openSession();
+        T entity = session.find(entityClass, id);
+        session.close();
+        return entity;
     }
 }
